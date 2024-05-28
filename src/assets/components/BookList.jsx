@@ -5,7 +5,7 @@ import { useBooks } from './useBooks';
 import SearchBooks from './SearchBooks';
 
 const BookList = () => {
-  const { bookList } = useBooks();
+  const { bookList, removeBookFromList } = useBooks();
 
   return (
     <>
@@ -17,7 +17,10 @@ const BookList = () => {
       <h3>Lista de Libros Añadidos</h3>
       <ul>
         {bookList.map((book, index) => (
-          <li key={index}>{book.volumeInfo.title}</li>
+          <li key={index}>{book.volumeInfo.title}
+          <button onClick={() => removeBookFromList(book.id)}>Eliminar</button>
+          </li>
+          
         ))}
       </ul>
     </div>

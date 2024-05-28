@@ -15,9 +15,13 @@ const BooksProvider = ({ children }) => {
     console.log("Book added:", book);
   };
 
+  const removeBookFromList = (bookId) => {
+    setBookList((prevBooks) => prevBooks.filter(book => book.id !== bookId));
+  };
+
 
   return (
-    <BooksContext.Provider value={{ bookList, addBookToList }}>
+    <BooksContext.Provider value={{ bookList, addBookToList, removeBookFromList }}>
       {children}
     </BooksContext.Provider>
   );
