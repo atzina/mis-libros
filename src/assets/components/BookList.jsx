@@ -1,5 +1,6 @@
 
 import React from 'react';
+import './BookList.css';
 import { useBooks } from './useBooks';
 import SearchBooks from './SearchBooks';
 
@@ -8,16 +9,18 @@ const BookList = () => {
 
   return (
     <>
-    <section>
+    <div className='principal'>
+    <section className='comp-search'>
         <SearchBooks/>
     </section>
-    <div>
-      <h2>Lista de Libros Añadidos</h2>
+    <div className='div-list'>
+      <h3>Lista de Libros Añadidos</h3>
       <ul>
         {bookList.map((book, index) => (
           <li key={index}>{book.volumeInfo.title}</li>
         ))}
       </ul>
+    </div>
     </div>
     </>
   );

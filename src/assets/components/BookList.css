@@ -1,0 +1,14 @@
+.principal {
+    display: flex;
+}
+
+
+.comp-search {
+    width: 50%;
+    margin:50px;
+}
+
+.div-list {
+    width: 50%;
+    margin:50px;
+}

@@ -19,14 +19,14 @@ const SearchBooks = () => {
 
 const handleAddToBookList = (book) => {
     addBookToList(book);
-    alert(`Libro "${book.volumeInfo.title}" agregado a la lista.`);
+    
    
   };
 
 
   return (
     <>
-    <h1>Buscar Libros</h1>
+    <h4>Buscar Libros</h4>
     <div>
       <input 
         type="text" 
@@ -40,6 +40,7 @@ const handleAddToBookList = (book) => {
           <li key={book.id}>
             <h3>{book.volumeInfo.title}</h3>
             <p>{book.volumeInfo.authors && book.volumeInfo.authors.join(', ')}</p>
+            
             <Link to={`/book-details/${book.id}`}>Ver detalles</Link>
             <button onClick={() => handleAddToBookList(book)}>Agregar a lista</button>
           </li>

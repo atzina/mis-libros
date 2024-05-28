@@ -17,13 +17,18 @@ const BookDetails = () => {
   if (!book) return <div>Cargando...</div>;
 
   return (
-    <div>
-      <h2>{book.volumeInfo.title}</h2>
-      <p>{book.volumeInfo.description}</p>
-      <p>{book.volumeInfo.authors && book.volumeInfo.authors.join(', ')}</p>
-      <p>{book.volumeInfo.publishedDate}</p>
-      <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
-    </div>
+    <>
+        <div>
+        <h2>{book.volumeInfo.title}</h2>
+        <p>{book.volumeInfo.description}</p>
+        <p>{book.volumeInfo.authors && book.volumeInfo.authors.join(', ')}</p>
+        <p>{book.volumeInfo.publishedDate}</p>
+        <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
+        </div>
+        <div>
+        <a href="javascript:history.go(-1)">Atrás</a>
+        </div>
+    </>
   );
 }
 
