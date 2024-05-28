@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const SearchBooks = () => {
   const [query, setQuery] = useState('');
@@ -29,7 +30,7 @@ const SearchBooks = () => {
           <li key={book.id}>
             <h3>{book.volumeInfo.title}</h3>
             <p>{book.volumeInfo.authors && book.volumeInfo.authors.join(', ')}</p>
-            {/* Puedes añadir un enlace para ver detalles del libro */}
+            <Link to={`/book-details/${book.id}`}>Ver detalles</Link>
           </li>
         ))}
       </ul>
