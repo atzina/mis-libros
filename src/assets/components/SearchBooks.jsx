@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {useBooks} from './useBooks'
+
 
 const SearchBooks = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+
+  const { addBookToList } = useBooks();
 
   const handleSearch = async () => {
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
@@ -12,6 +16,12 @@ const SearchBooks = () => {
     console.log(data);
 
 }
+
+const handleAddToBookList = (book) => {
+    addBookToList(book);
+    alert(`Libro "${book.volumeInfo.title}" agregado a la lista.`);
+   
+  };
 
 
   return (
@@ -31,6 +41,7 @@ const SearchBooks = () => {
             <h3>{book.volumeInfo.title}</h3>
             <p>{book.volumeInfo.authors && book.volumeInfo.authors.join(', ')}</p>
             <Link to={`/book-details/${book.id}`}>Ver detalles</Link>
+            <button onClick={() => handleAddToBookList(book)}>Agregar a lista</button>
           </li>
         ))}
       </ul>

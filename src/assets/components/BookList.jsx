@@ -1,10 +1,26 @@
 
+import React from 'react';
+import { useBooks } from './useBooks';
+import SearchBooks from './SearchBooks';
 
-function BookList () {
+const BookList = () => {
+  const { bookList } = useBooks();
 
-    return (
-        <h1>bookList</h1>
-    )
-}
+  return (
+    <>
+    <section>
+        <SearchBooks/>
+    </section>
+    <div>
+      <h2>Lista de Libros Añadidos</h2>
+      <ul>
+        {bookList.map((book, index) => (
+          <li key={index}>{book.volumeInfo.title}</li>
+        ))}
+      </ul>
+    </div>
+    </>
+  );
+};
 
 export default BookList;
