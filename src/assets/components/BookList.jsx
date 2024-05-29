@@ -14,7 +14,7 @@ const BookList = () => {
         <SearchBooks/>
     </section>
     <div className='div-list'>
-      <h3>Lista de Libros Añadidos</h3>
+      <h3 className='title-list'>Lista de Libros Añadidos</h3>
       <ul>
         {bookList.map((book, index) => (
           <li key={index}>{book.volumeInfo.title}

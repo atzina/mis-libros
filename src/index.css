@@ -11,6 +11,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url('../src/assets/fondo.jpg');
+  background-size: cover;
+  width: 100%;
+
 }
 
 a {
@@ -24,6 +29,8 @@ a:hover {
 
 body {
   margin: 0;
+  
+  
 
 }
 
